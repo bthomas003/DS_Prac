@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>AFINN Twitter Search</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>AFINN Twitter Search</h1>
+  <hr/>
+  <input type="text" id="searchText" placeholder="Enter text to have the Twitter results analyzed by AFINN. Press ENTER for the results.">
+  <div class="results">
+    <h3>Results</h3>
+    <lable class="loading">Loading.. Please wait</lable>
+    <br/>
+    <lable class="error">Oops.. Something went wrong</lable>
+    <br/>
+  </div>
+  <section class="tweet-results">
+  </section>
+
+ <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ <script type="text/javascript" src="scripts/app.js"></script>
+
+  <script type="text/html" id="tweet_tmpl">
+    <article>
+      <div class="left">
+        <img src="{{=imgSrc}}">
+        <p>{{=tweet}}
+        <a href="{{=tweetLink}}" target="_blank">Link</a></p>
+      </div>
+      <div class="right">
+        <table>
+          <tr>
+            <td>Score</td>
+            <td>{{=score}}</td>
+          </tr>
+          <tr>
+            <td>Comparative</td>
+            <td>{{=comparative}}</td>
+          </tr>
+          <tr>
+            <td>Favorited</td>
+            <td>{{=favorited}}</td>
+          </tr>
+          <tr>
+            <td>Retweeted</td>
+            <td>{{=retweet}}</td>
+          </tr>
+          <tr>
+            <td>Words Matched</td>
+            <td>{{=wordsMatched}}</td>
+          </tr>
+          <tr>
+            <td>Positive Words</td>
+            <td>{{=positiveWords}}</td>
+          </tr>
+          <tr>
+            <td>Negative Words</td>
+            <td>{{=negativeWords}}</td>
+          </tr>
+        </table>
+        <table width="100%">
+  <tbody>
+    <tr>
+      <td></td>
+
+      <td>precision</td>
+
+      <td>recall</td>
+
+      <td>
+        <p>f1-score</p>
+      </td>
+
+      <td>
+        <p>support</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Boeing<br>
+      </td>
+
+      <td>0.13</td>
+
+      <td>0.20</td>
+
+      <td>0.16</td>
+
+      <td>30</td>
+    </tr>
+
+    <tr>
+      <td>Coke</td>
+
+      <td>0.00</td>
+
+      <td>0.00</td>
+
+      <td>0.00</td>
+
+      <td>26</td>
+    </tr>
+
+    <tr>
+      <td>GoldSachs</td>
+
+      <td>0.00</td>
+
+      <td>0.00</td>
+
+      <td>0.00</td>
+
+      <td>25</td>
+    </tr>
+
+    <tr>
+      <td>Visa</td>
+
+      <td>0.05</td>
+
+      <td>0.05</td>
+
+      <td>0.05</td>
+
+      <td>20</td>
+    </tr>
+
+    <tr>
+      <td>WalMart</td>
+
+      <td>0.00</td>
+
+      <td>0.00</td>
+
+      <td>0.00</td>
+
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+    </article>
+  </script>
+</body>
+
+</html>
